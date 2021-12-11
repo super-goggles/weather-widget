@@ -18,5 +18,8 @@
   "homepage": "https://github.com/super-goggles/weather-widget#readme",
   "dependencies": {
     "dayjs": "^1.10.7"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
