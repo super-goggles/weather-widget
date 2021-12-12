@@ -12,6 +12,12 @@ const currentWeather = (lat, lon) => {
   ).then((response) => response.json());
 };
 
+const weatherForecast = (lat, lon) => {
+  return fetch(
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=b4e0b0a6c8793504deea892cdf71dab4`
+  ).then((response) => response.json());
+};
+
 if (!navigator.geolocation) {
   console.log("Geolocation is not supported by your browser");
 } else {
@@ -33,5 +39,7 @@ if (!navigator.geolocation) {
       }
       //console.log(weather)
     );
+
+    weatherForecast(lat, lon).then(forecast => console.log(forecast))
   });
 }
