@@ -1,5 +1,6 @@
 const { src, dest, series } = require('gulp');
 const minify = require('gulp-minify');
+const cleanCSS = require('gulp-clean-css')
 
 function pagesTask() {
   return src('src/*.html').pipe(dest('dist'))
@@ -12,7 +13,9 @@ function scriptsTask() {
 }
 
 function stylesTask() {
-  return src('src/styles/*.css').pipe(dest('dist/styles'));
+  return src('src/styles/*.css')
+  .pipe(cleanCSS())
+  .pipe(dest('dist/styles'));
 }
 
 function defaultTask(cb) {
