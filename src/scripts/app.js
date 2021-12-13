@@ -41,7 +41,6 @@ if (!navigator.geolocation) {
 
       while (fullForecastList.length) {
         let dailyForecastList = fullForecastList.splice(0, 8);
-        console.log(dailyForecastList)
 
         let forecastDate = new Date(dailyForecastList[0].dt_txt);
         let forecastDay = forecastDate.toLocaleDateString('en-CA', {
