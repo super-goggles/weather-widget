@@ -1,11 +1,14 @@
 const { src, dest, series } = require('gulp');
+const minify = require('gulp-minify');
 
 function pagesTask() {
   return src('src/*.html').pipe(dest('dist'))
 }
 
 function scriptsTask() {
-  return src('src/scripts/*.js').pipe(dest('dist/scripts'));
+  return src('src/scripts/*.js')
+  .pipe(minify())
+  .pipe(dest('dist/scripts'));
 }
 
 function stylesTask() {
